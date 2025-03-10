@@ -1,0 +1,13 @@
+<!-- DV CUSTOM SCRIPT REFERENCE -->
+<script>
+    // Set Script URL information
+    let scriptURL = 'https://cdn.doubleverify.com/dvbm.js#ctx=1234&cmp=5678&sid=91011&plc=121314&advid=151617&adsrv=1&btreg=sas-interstitial&btadsrv=sas-interstitial&mon=1&blk=0';
+
+    // Function will create the script at the creative scope level
+    !function(){let t=window.parent===window.top?window.top:window.parent;if(!t.document){console.error("dv-custom-target","document-scope-error");return}let e=t.document.createElement("script");e.setAttribute("src",scriptURL),e.async=!0;let o=t.document.body;t.document.querySelector("#[sas_tagId]")?(t.document.querySelector("#[sas_tagId]").appendChild(e),console.log("dv-custom-target","format")):o?(o.appendChild(e),console.log("dv-custom-target","body")):console.error("dv-custom-target","not-found")}();
+</script>
+
+<!-- MAINTAIN NO SCRIPT -->
+<noscript>
+    <img src='https://tps.doubleverify.com/visit.jpg?tagtype=display&ctx=1234&cmp=5678&sid=91011&plc=121314&advid=151617&adsrv=1&btreg=sas-interstitial&btadsrv=sas-interstitial&gdpr=[sas_gdpr_applies]&gdpr_consent=[sas_gdpr_consent]' BORDER='0' WIDTH='1' HEIGHT='1' ALT=''/>
+</noscript>

@@ -41,8 +41,8 @@ Determine what is the Id reference that will be required by reviewing the ad con
 DV will use the container's information to reference the proper container. This will be included on the script and backup pixel URLs as value for `btreg` and `btadsrv` parameters, like so:
 
 ```html
-<script src="https://cdn.doubleverify.com/dvbm.js#params(...)&btreg=[sas_tadId]&btadsrv=[sas_tadId]"></script>
-<noscript><img src='https://tps.doubleverify.com/visit.jpg?params(...)&btreg=[sas_tadId]&btadsrv=[sas_tadId]' BORDER='0' WIDTH='1' HEIGHT='1' ALT=''/></noscript>
+<script src="https://cdn.doubleverify.com/dvbm.js#params(...)&btreg=[sas_tagId]&btadsrv=[sas_tagId]"></script>
+<noscript><img src='https://tps.doubleverify.com/visit.jpg?params(...)&btreg=[sas_tagId]&btadsrv=[sas_tagId]' BORDER='0' WIDTH='1' HEIGHT='1' ALT=''/></noscript>
 ```
 
 ---
@@ -84,7 +84,7 @@ The code is minified to simplify the integration process within Equativ's platfo
 <!-- DV CUSTOM SCRIPT REFERENCE -->
 <script>
     // Set Script URL information
-    let scriptURL = 'https://cdn.doubleverify.com/dvbm.js#params(...)&btreg=[sas_tadId]&btadsrv=[sas_tadId]';
+    let scriptURL = 'https://cdn.doubleverify.com/dvbm.js#params(...)&btreg=[sas_tagId]&btadsrv=[sas_tagId]';
 
     // Function will create the script at the creative scope level - No need to be modified
     !function(){let t=window.parent===window.top?window.top:window.parent;if(!t.document){console.error("dv-custom-target","document-scope-error");return}let e=t.document.createElement("script");e.setAttribute("src",scriptURL),e.async=!0;let o=t.document.body;t.document.querySelector("#[sas_tagId]")?(t.document.querySelector("#[sas_tagId]").appendChild(e),console.log("dv-custom-target","format")):o?(o.appendChild(e),console.log("dv-custom-target","body")):console.error("dv-custom-target","not-found")}();
@@ -92,7 +92,7 @@ The code is minified to simplify the integration process within Equativ's platfo
 
 <!-- MAINTAIN NO SCRIPT -->
 <noscript>
-    <img src='https://tps.doubleverify.com/visit.jpg?params(...)&btreg=[sas_tadId]&btadsrv=[sas_tadId]' BORDER='0' WIDTH='1' HEIGHT='1' ALT=''/>
+    <img src='https://tps.doubleverify.com/visit.jpg?params(...)&btreg=[sas_tagId]&btadsrv=[sas_tagId]' BORDER='0' WIDTH='1' HEIGHT='1' ALT=''/>
 </noscript>
 ```
 > [!NOTE]
@@ -109,7 +109,7 @@ Interstitial Ads are not displayed directly into Equativ's default container giv
 
 In this particular case, the container id that needs to be referenced is: `sas-interstitial`.
 
-The code should include the change on the `btreg` and `btadsrv` parameters replacing `[sas_tadId]` macro.
+The code should include the change on the `btreg` and `btadsrv` parameters replacing `[sas_tagId]` macro.
 
 ```javascript
 let scriptURL = 'https://cdn.doubleverify.com/dvbm.js#params(...)&btreg=sas-interstitial&btadsrv=sas-interstitial';
